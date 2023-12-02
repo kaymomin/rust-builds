@@ -1,0 +1,15 @@
+[package]
+name = "compress_youtube"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+# external crate (packages) / just type no need to install shit
+# streaming compression/decompression library - https://crates.io/crates/flate2 
+
+flate2 = "1.0.24"
+
+
