@@ -33,4 +33,35 @@ fn main(){
     //represent each var in a tuple as a, b, or c
     let (a, b, c) = tup;
     println!("first: {}, second: {}, third: {}", a, b, c);
+
+    //On array, slices and the concept of ownership and borrowing
+    let anotherarr = [0,1,3,6];
+    let slice = &anotherarr[0 .. 3];
+
+    borrowing_slice(anotherarr, slice);
+
+    //string
+    let str: &str = "hey you there";
+    //or
+    let mut styy: String = String::from("hey you there");
+    let strslice = &styy[.. 5];
+    println!("method 1: {}",str);
+    println!("method 2: {}",styy);
+    println!("method 3: {}, len: {}",strslice, strslice.len());
+
+    styy.push('8');
+    styy.push_str(" hey");
+    styy = styy.replace("there", "here");
+    println!("{}", styy);
+
+
+}
+
+fn borrowing_slice(anotherarr: [u8; 4], slice: &[u8]){
+    println!("{:?}", anotherarr);
+    println!("{:?}", slice);
+    //know len before
+    println!("len: {}", slice.len());
+    println!("{} {}", slice[0], slice[2]);
+
 }
